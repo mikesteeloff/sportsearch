@@ -13,5 +13,24 @@ namespace WebApplicationSportSearch
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SportDBDataContext db = new SportDBDataContext();
+
+            MainSport sp = new MainSport();
+
+            sp.Имя = TextBox1.Text;
+            sp.Фамилия = TextBox2.Text;
+            sp.Возраст = Convert.ToInt32(TextBox3.Text);
+            sp.Вес = Convert.ToInt32(TextBox4.Text);
+            sp.КолТравм = Convert.ToInt32(TextBox5.Text);
+            sp.Соревнование = TextBox6.Text;
+
+            db.MainSport.InsertOnSubmit(sp);
+            db.SubmitChanges();
+
+            Response.Redirect("/Main.aspx");
+        }
     }
 }
