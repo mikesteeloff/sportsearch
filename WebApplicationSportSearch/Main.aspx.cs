@@ -18,16 +18,16 @@ namespace WebApplicationSportSearch
         {
             SportDBDataContext db = new SportDBDataContext();
 
-            MainSport sp = new MainSport();
+            MainSport spp = new MainSport();
 
-            sp.Имя = TextBox1.Text;
-            sp.Фамилия = TextBox2.Text;
-            sp.Возраст = Convert.ToInt32(TextBox3.Text);
-            sp.Вес = Convert.ToInt32(TextBox4.Text);
-            sp.КолТравм = Convert.ToInt32(TextBox5.Text);
-            sp.Соревнование = TextBox6.Text;
+            spp.Имя = TextBox1.Text;
+            spp.Фамилия = TextBox2.Text;
+            spp.Возраст = Convert.ToInt32(TextBox3.Text);
+            spp.Вес = Convert.ToInt32(TextBox4.Text);
+            spp.КолТравм = Convert.ToInt32(TextBox5.Text);
+            spp.Соревнование = TextBox6.Text;
 
-            db.MainSport.InsertOnSubmit(sp);
+            db.MainSport.InsertOnSubmit(spp);
             db.SubmitChanges();
 
             Response.Redirect("/Main.aspx");
