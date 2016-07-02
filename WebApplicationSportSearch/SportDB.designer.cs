@@ -86,11 +86,11 @@ namespace WebApplicationSportSearch
 		
 		private string _Фамилия;
 		
-		private System.Nullable<int> _Возраст;
+		private string _Возраст;
 		
-		private System.Nullable<int> _Вес;
+		private string _Вес;
 		
-		private System.Nullable<int> _КолТравм;
+		private string _КолТравм;
 		
 		private string _Соревнование;
 		
@@ -104,11 +104,11 @@ namespace WebApplicationSportSearch
     partial void OnИмяChanged();
     partial void OnФамилияChanging(string value);
     partial void OnФамилияChanged();
-    partial void OnВозрастChanging(System.Nullable<int> value);
+    partial void OnВозрастChanging(string value);
     partial void OnВозрастChanged();
-    partial void OnВесChanging(System.Nullable<int> value);
+    partial void OnВесChanging(string value);
     partial void OnВесChanged();
-    partial void OnКолТравмChanging(System.Nullable<int> value);
+    partial void OnКолТравмChanging(string value);
     partial void OnКолТравмChanged();
     partial void OnСоревнованиеChanging(string value);
     partial void OnСоревнованиеChanged();
@@ -179,8 +179,8 @@ namespace WebApplicationSportSearch
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Возраст", DbType="Int")]
-		public System.Nullable<int> Возраст
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Возраст", DbType="NVarChar(50)")]
+		public string Возраст
 		{
 			get
 			{
@@ -199,8 +199,8 @@ namespace WebApplicationSportSearch
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Вес", DbType="Int")]
-		public System.Nullable<int> Вес
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Вес", DbType="NVarChar(50)")]
+		public string Вес
 		{
 			get
 			{
@@ -219,8 +219,8 @@ namespace WebApplicationSportSearch
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_КолТравм", DbType="Int")]
-		public System.Nullable<int> КолТравм
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_КолТравм", DbType="NVarChar(50)")]
+		public string КолТравм
 		{
 			get
 			{

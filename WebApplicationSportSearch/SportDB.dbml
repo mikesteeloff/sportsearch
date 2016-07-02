@@ -5,9 +5,9 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Имя" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Фамилия" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Возраст" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Вес" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="КолТравм" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Возраст" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Вес" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="КолТравм" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Соревнование" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
