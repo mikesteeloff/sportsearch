@@ -17,7 +17,7 @@ namespace WebApplicationSportSearch
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SportDBDataContext dbb = new SportDBDataContext();
+            sportDBDataContext dbb = new sportDBDataContext();
 
             MainSport spp = new MainSport();
 

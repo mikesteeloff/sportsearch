@@ -23,7 +23,7 @@ namespace WebApplicationSportSearch
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SportSearch")]
-	public partial class SportDBDataContext : System.Data.Linq.DataContext
+	public partial class sportDBDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -35,31 +35,31 @@ namespace WebApplicationSportSearch
     partial void DeleteMainSport(MainSport instance);
     #endregion
 		
-		public SportDBDataContext() : 
+		public sportDBDataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SportSearchConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public SportDBDataContext(string connection) : 
+		public sportDBDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public SportDBDataContext(System.Data.IDbConnection connection) : 
+		public sportDBDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public SportDBDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public sportDBDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public SportDBDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public sportDBDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -119,7 +119,7 @@ namespace WebApplicationSportSearch
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID
 		{
 			get
