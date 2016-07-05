@@ -24,10 +24,14 @@ namespace WebApplicationSportSearch
                {
                     Response.Redirect("/Main.aspx");
                }
+               else
+               {
+                    Label1.Text = "Неверный пароль!";
+               }
             }
             else
             {
-                Label1.Text = "Неверный логин или пароль!";
+                Label1.Text = "Неверный логин!";
             }
         }
     }
