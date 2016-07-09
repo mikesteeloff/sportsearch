@@ -9,8 +9,6 @@ namespace WebApplicationSportSearch
 {
     public partial class Enter : System.Web.UI.Page
     {
-        string user = "Dima";
-        string pass = "12345";
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,21 +16,29 @@ namespace WebApplicationSportSearch
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text == user)
+            PassDataContext bd = new PassDataContext();
+            try
             {
-               if (TextBox2.Text == pass)
-               {
-                    Response.Redirect("/Main.aspx");
-               }
-               else
-               {
-                    Label1.Text = "Неверный пароль!";
-               }
+
+                var userlogin = (from u in bd.Enter
+                                 where u.Name == TextBox1.Text
+                                 select u).ToArray();
+
+                var userpass = (from u in bd.Enter
+                                where u.Pass == TextBox2.Text
+                                select u).ToArray();
+
+                if (TextBox1.Text == userlogin[0].Name)
+                {
+                    if (TextBox2.Text == userpass[0].Pass)
+                    {
+                        Response.Redirect("/Main.aspx");
+                    }
+
+                }
+
             }
-            else
-            {
-                Label1.Text = "Неверный логин!";
-            }
+            catch (SystemException y) { Label1.Text = "Ошибка авторизации!"; }
         }
     }
 }
